@@ -1,8 +1,10 @@
 https://wiki.friendlyelec.com/wiki/index.php/How_to_Install_Docker_on_Debian
 
 step1: change iptables ** important **
+'''bash
 [ -f /usr/sbin/iptables-legacy ] && sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
 [ -f /usr/sbin/ip6tables-legacy ] && sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+'''
 
 step2: install docker
 sudo apt install lsb-release wget
