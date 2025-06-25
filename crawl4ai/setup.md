@@ -5,8 +5,9 @@ docker pull unclecode/crawl4ai:all-arm64
 
 ## Docker run 
 ```bash
-docker run --rm -it \
+docker run --rm -d \
+  --network host \
   -e CRAWL4AI_API_TOKEN=12345 \
-  -p 11235:11235 \
+  --name crawl4ai \
   unclecode/crawl4ai:all-arm64
 ```
