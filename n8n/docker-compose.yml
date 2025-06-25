@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  n8n:
+    build: ./n8n
+    container_name: n8n-c
+    restart: always
+    ports:
+      - "5678:5678"
+    environment:
+      - TZ=Asia/Shanghai
+      - GENERIC_TIMEZONE=Asia/Shanghai
+      - DB_TYPE=sqlite
+      - N8N_SECURE_COOKIE=false
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+      - N8N_RUNNERS_ENABLED=true
+      - N8N_WORKFLOWS_FOLDER=/home/node/workflows
+    volumes:
+      - ./n8n/data/.n8n:/home/node/.n8n
+      - ./n8n/workflows:/home/node/workflows
