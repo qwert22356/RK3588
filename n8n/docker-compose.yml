@@ -16,5 +16,5 @@ services:
       - N8N_RUNNERS_ENABLED=true
       - N8N_WORKFLOWS_FOLDER=/home/node/workflows
     volumes:
-      - ./n8n/data/.n8n:/home/node/.n8n
-      - ./n8n/workflows:/home/node/workflows
+      - ./.n8n:/home/node/.n8n
+      - ./workflows:/home/node/workflows
